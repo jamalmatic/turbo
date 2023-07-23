@@ -1,9 +1,4 @@
-import { Roboto } from 'next/font/google'
- 
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-})
+import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry"
 
 export const metadata = {
   title: 'Turbo car rental management',
@@ -13,8 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        {children}
+      <body>
+        <ThemeRegistry>
+          {children}
+        </ ThemeRegistry>
       </body>
     </html>
   )
