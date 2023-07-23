@@ -1,4 +1,7 @@
 import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry"
+import Box  from "@mui/material/Box"
+import Footer from "@/components/Footer"
+
 
 export const metadata = {
   title: 'Turbo car rental management',
@@ -10,7 +13,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThemeRegistry>
-          {children}
+          <Box sx={{
+              display: 'flex',
+              flexDirection : 'column',
+              minHeight: '100vh'
+            }}
+          >
+            {children}
+            <Footer/>
+          </Box>
         </ ThemeRegistry>
       </body>
     </html>
